@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: remote-device-cloud-server
+    runtime: node
+    rootDir: server
+    plan: free
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: PAIR_CODE
+        sync: false
